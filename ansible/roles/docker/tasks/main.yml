@@ -81,6 +81,7 @@
     git checkout traefik 
     git reset --hard origin/traefik 
     git pull --rebase --no-edit
+    chmod 600 letsencrypt/acme.json
     docker compose up -d
   args:
     executable: /bin/bash
