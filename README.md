@@ -26,6 +26,8 @@ git clone https://github.com/your-repo/Terraform-ansible-iac-HNG.git
 cd Terraform-ansible-iac-HNG
 ```
 
+###1.1 Insert Your access and secret key at variables.tf edit the deafult value
+
 ### 2. Initialize and Deploy Infrastructure with Terraform
 
 ```bash
