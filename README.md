@@ -53,7 +53,7 @@ Ensure the instance details are correct before proceeding.
 
 ```bash
 cd ../ansible
-ansible-playbook -i inventory.ini playbook.yml -v
+sudo ansible-playbook -i inventory.ini playbook.yml -v
 ```
 
 This installs Docker, deploys applications, and configures the system.
