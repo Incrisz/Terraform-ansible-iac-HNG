@@ -60,5 +60,5 @@ This installs Docker, deploys applications, and configures the system.
 
 ---
 
-This README provides a structured and clear guide for your setup. Let me know if you'd like any refinements! 🚀
+This README provides a structured and clear guide for your setup. 🚀
 
