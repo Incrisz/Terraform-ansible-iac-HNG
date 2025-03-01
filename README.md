@@ -22,7 +22,7 @@ Ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/Terraform-ansible-iac-HNG.git
+git clone https://github.com/incrisz/Terraform-ansible-iac-HNG.git
 cd Terraform-ansible-iac-HNG
 ```
 
