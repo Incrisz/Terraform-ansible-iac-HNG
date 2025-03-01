@@ -1,5 +1,5 @@
 - name: Install Docker and Deploy Services
-  hosts: localhost
+  hosts: my_cloud_server
   become: yes
   roles:
     - docker

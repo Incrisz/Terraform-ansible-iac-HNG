@@ -12,19 +12,19 @@ resource "aws_security_group" "sg_custom" {
     }
 
     # Define ingress (inbound) rules for allowing SSH access to instances.
-    # ingress {  # Defines inbound rule for SSH.
-    #     from_port   = 22       # The port for SSH traffic.
-    #     to_port     = 22       # The same as from_port since it's targeting a single port.
-    #     protocol    = "tcp"    # The protocol used for SSH.
-    #     cidr_blocks = [ "0.0.0.0/0" ] # Allowed source IP range for this traffic.
-    # }
+    ingress {  # Defines inbound rule for SSH.
+        from_port   = 22       # The port for SSH traffic.
+        to_port     = 22       # The same as from_port since it's targeting a single port.
+        protocol    = "tcp"    # The protocol used for SSH.
+        cidr_blocks = [ "0.0.0.0/0" ] # Allowed source IP range for this traffic.
+    }
     # Define ingress (inbound) rules for allowing SSH access to instances.
-    # ingress {  # Defines inbound rule for SSH.
-    #     from_port   = 8081       # The port for SSH traffic.
-    #     to_port     = 8081       # The same as from_port since it's targeting a single port.
-    #     protocol    = "tcp"    # The protocol used for SSH.
-    #     cidr_blocks = [ "0.0.0.0/0" ] # Allowed source IP range for this traffic.
-    # }
+    ingress {  # Defines inbound rule for SSH.
+        from_port   = 8081       # The port for SSH traffic.
+        to_port     = 8081       # The same as from_port since it's targeting a single port.
+        protocol    = "tcp"    # The protocol used for SSH.
+        cidr_blocks = [ "0.0.0.0/0" ] # Allowed source IP range for this traffic.
+    }
     # Define ingress rules for allowing HTTP access.
     ingress {  # Defines inbound rule for HTTP.
         from_port   = 80       # Port for HTTP traffic.
