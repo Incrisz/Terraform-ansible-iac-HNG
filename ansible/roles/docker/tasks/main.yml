@@ -13,11 +13,9 @@
     state: directory
     mode: '0755'
 
-- name: Download Docker GPG key
-  get_url:
-    url: https://download.docker.com/linux/ubuntu/gpg
-    dest: /etc/apt/keyrings/docker.asc
-    mode: '0644'
+- name: Download Docker GPG key using curl
+  shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+
 
 - name: Add Docker repository
   shell: |
@@ -53,20 +51,6 @@
     groups: docker
     append: yes
 
-- name: Start Portainer container
-  docker_container:
-    name: portainer
-    image: portainer/portainer-ce
-    state: started
-    restart_policy: always
-    ports:
-      - "9000:9000"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-      - "portainer_data:/data"
-
-- name: Restart Portainer
-  shell: docker restart portainer
 
 - name: Clone project repository
   git:
@@ -76,11 +60,6 @@
 - name: Deploy application using Docker Compose
   shell: |
     cd /home/ubuntu/DevOps-Stage-4-Microservices-
-    git fetch origin 
-    git reset --hard HEAD 
-    git checkout traefik 
-    git reset --hard origin/traefik 
-    git pull --rebase --no-edit
     chmod 600 letsencrypt/acme.json
     docker compose up -d
   args:
